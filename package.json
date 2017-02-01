@@ -1,0 +1,30 @@
+{
+  "name": "test-react-motion",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "^0.8.5"
+  },
+  "dependencies": {
+    "d3-array": "latest",
+    "d3-ease": "^1.0.2",
+    "d3-interpolate": "^1.1.3",
+    "d3-timer": "latest",
+    "d3-transition": "latest",
+    "object-map": "^1.0.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-motion": "^0.4.7",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.4",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
