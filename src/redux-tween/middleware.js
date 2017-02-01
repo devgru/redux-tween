@@ -1,33 +1,27 @@
-import tween from './d3-tween';
+import dispatchProgressUpdate from './helpers/dispatch-progress-update';
+import doNotTween from './helpers/do-not-tween';
+import getTweenId from './helpers/get-tween-id';
+import mergeConfig from './helpers/merge-config';
+import selectRoot from './helpers/select-root';
+import startTransition from './helpers/start-transition';
 
-import tick from './tick';
-import {STORE_TWEEN_TARGET} from './actions';
-
-const defaultTweenConfig = {
-  duration: 1000,
-  delay: 0
-};
+import {SETUP_TWEEN_TARGET} from './actions';
 
 export default store => next => action => {
-  const {tweenConfig} = action;
-  if (!tweenConfig) {
+  if (doNotTween(action)) {
     next(action);
     return
   }
   
-  const dispatchTweenState = tick(store);
+  const tweenConfig = mergeConfig(action);
+  const id = getTweenId(tweenConfig, action);
+  const updateTweenProgress = dispatchProgressUpdate(store)(id);
+  const selection = selectRoot(id).datum(action);
+  startTransition(selection, id, tweenConfig, updateTweenProgress);
   
-  const id = tweenConfig.id;
   next({
-    type: STORE_TWEEN_TARGET,
-    action,
-    id
-  });
-  
-  tween(
+    type: SETUP_TWEEN_TARGET,
     id,
-    {...defaultTweenConfig, ...tweenConfig},
-    dispatchTweenState
-  );
-  
+    originalAction: action
+  });
 };

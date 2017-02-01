@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {range} from 'd3-array';
 
 import mapActionCreators from '../util/map-action-creators';
 import Circle from '../components/circle';
 import {actionCreators as circleActionCreators} from '../ducks/move-circle';
 import {tweenActionCreators} from "../redux-tween/index";
 
-import {easeLinear as ease} from 'd3-ease';
+import {easeCubic as ease} from 'd3-ease';
 const tween = {
-  duration: 3000,
-  ease
+  duration: (action) => 500,
+  delay: (action) => 0,
+  ease,
+  getId: () => 'demo'
 };
 
 const mapStateToProps = store => {
@@ -25,21 +26,19 @@ const connectWithProps = connect(mapStateToProps, mapDispatchToProps);
 
 class Demo extends Component {
   componentDidMount() {
-    this.props.moveCircle(400);
+    this.props.moveCircle(400, 0);
     
     setTimeout(() => {
-      this.props.moveCircle(0);
-    }, 2000);
+      this.props.moveCircle(0, 1000);
+    }, 500);
     setTimeout(() => {
-      this.props.moveCircle(200);
-    }, 3000);
+      this.props.moveCircle(200, 200);
+    }, 700);
   }
   
   render() {
     return <g>
-      {range(0, 10).map(r =>
-        <Circle x={this.props.circle.x} y={r * 10} key={r}/>
-      )}
+      <Circle {...this.props.circle}/>
     </g>
   }
 }

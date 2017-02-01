@@ -1,21 +1,20 @@
 import {interpolate} from 'd3-interpolate';
 
-import {SET_TWEEN_STATE, STORE_TWEEN_TARGET} from './actions';
+import {setupTween, tweenState} from './helpers/tween-storage';
 
-const tweens = {};
+import {UPDATE_TWEEN_PROGRESS, SETUP_TWEEN_TARGET} from './actions';
 
 export default reducer => (state, action) => {
-  const {type, id, time} = action;
+  const {type, id, progress, originalAction} = action;
   switch (type) {
-    case STORE_TWEEN_TARGET: {
+    case SETUP_TWEEN_TARGET: {
       const fromState = state;
-      const toState = reducer(state, action.action);
-      tweens[id] = interpolate(fromState, toState);
+      const toState = reducer(state, originalAction);
+      setupTween(id, interpolate(fromState, toState));
       return state;
     }
-    case SET_TWEEN_STATE: {
-      const state = tweens[id](time);
-      if (time === 1) delete tweens[id];
+    case UPDATE_TWEEN_PROGRESS: {
+      const state = tweenState(id, progress);
       return {...state};
     }
     default:

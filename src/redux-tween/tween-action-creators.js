@@ -1,16 +1,9 @@
 import mapObject from 'object-map';
 
-let index = 0;
-function generateTween(tweenConfig, name) {
-  const id = `${index}-${name}`;
-  index++;
-  return {...tweenConfig, id};
-}
-
 export default tweenConfig => {
-  const tweenCreatedActions = (creator, name) => (...args) => ({
+  const tweenCreatedActions = (creator, id) => (...args) => ({
     ...creator(...args),
-    tweenConfig: generateTween(tweenConfig, name)
+    tweenConfig: {...tweenConfig, id}
   });
   
   return creators => mapObject(creators, tweenCreatedActions);
