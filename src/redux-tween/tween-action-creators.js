@@ -1,7 +1,11 @@
 import mapObject from 'object-map';
 
+let nextId = 0;
 export default tweenConfig => {
-  const tweenCreatedActions = (creator, id) => (...args) => ({
+  const id = nextId;
+  nextId++;
+  
+  const tweenCreatedActions = (creator) => (...args) => ({
     ...creator(...args),
     tweenConfig: {...tweenConfig, id}
   });

@@ -1,6 +1,5 @@
 import dispatchProgressUpdate from './helpers/dispatch-progress-update';
 import doNotTween from './helpers/do-not-tween';
-import getTweenId from './helpers/get-tween-id';
 import mergeConfig from './helpers/merge-config';
 import selectRoot from './helpers/select-root';
 import startTransition from './helpers/start-transition';
@@ -14,7 +13,7 @@ export default store => next => action => {
   }
   
   const tweenConfig = mergeConfig(action);
-  const id = getTweenId(tweenConfig, action);
+  const {id} = action;
   const updateTweenProgress = dispatchProgressUpdate(store)(id);
   const selection = selectRoot(id).datum(action);
   startTransition(selection, id, tweenConfig, updateTweenProgress);

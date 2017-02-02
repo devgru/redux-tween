@@ -8,10 +8,10 @@ import {tweenActionCreators} from "../redux-tween/index";
 
 import {easeCubic as ease} from 'd3-ease';
 const tween = {
-  duration: (action) => 500,
-  delay: (action) => 0,
-  ease,
-  getId: () => 'demo'
+  duration: action => 1000,
+  delay: action => 0,
+  filter: action => true,
+  ease
 };
 
 const mapStateToProps = store => {
