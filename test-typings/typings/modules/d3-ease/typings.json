@@ -1,0 +1,10 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/iamssen/typings-d3/ca915309a50ed4826b5b3e273f119b5caf0acea4/d3-ease/typings.json",
+    "raw": "registry:npm/d3-ease#1.0.0+20160622193901",
+    "main": "./index.d.ts",
+    "version": "1.0.0",
+    "name": "d3-ease"
+  }
+}

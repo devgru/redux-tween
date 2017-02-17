@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "d3-ease": "registry:npm/d3-ease#1.0.0+20160622193901"
+  }
+}
