@@ -110,7 +110,6 @@ Is [here](./API.md).
 - More tests;
 - More examples;
 - Queueing support;
-- Fast forward on interruption support;
 - Rewrite in TS.
 
 ## Development

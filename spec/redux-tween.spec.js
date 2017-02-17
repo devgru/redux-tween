@@ -13,14 +13,19 @@ import {easeCubicIn} from 'd3-ease';
 
 const reducer = (state = 0, action) => {
   const {type, percent} = action;
-  if (type == 'SET_PERCENTAGE') {
-    return percent;
+  switch (type) {
+    case 'SET_PERCENTAGE':
+      return percent;
+    case 'ADD_PERCENTAGE':
+      return state + percent;
+    default:
+      return state;
   }
-  return state;
 };
 
 const actionCreators = {
-  setPercentage: (percent) => ({type: 'SET_PERCENTAGE', percent})
+  setPercentage: (percent) => ({type: 'SET_PERCENTAGE', percent}),
+  addPercentage: (percent) => ({type: 'ADD_PERCENTAGE', percent})
 };
 
 const mapStateToProps = (percent = 0) => ({percent});
@@ -84,7 +89,24 @@ describe('redux-tween', () => {
     setPercentage(0);
     setPercentage(100);
   
-    return runTimer(component, 1010);
+    return runTimer(component, 1110);
+  });
+  
+  it('should achieve target state after two sequential tweens', function () {
+    const component = renderer.create(
+      <Provider store={store}>
+        <ConnectedTester />
+      </Provider>
+    );
+    
+    const {setPercentage, addPercentage} = mapDispatchToProps(store.dispatch);
+    setPercentage(0);
+    addPercentage(50);
+    setTimeout(() => {
+      addPercentage(50);
+    }, 300);
+    
+    return runTimer(component, 1500);
   });
   
   it('should have nearly 50% progress in 50% of time', function () {
@@ -115,7 +137,7 @@ describe('redux-tween', () => {
       setPercentage(-1)
     }, 500);
     
-    return runTimer(component, 1500);
+    return runTimer(component, 1600);
   });
   
   

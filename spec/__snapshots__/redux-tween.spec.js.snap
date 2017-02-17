@@ -4,6 +4,12 @@ exports[`redux-tween should achieve target state after tween 1`] = `
 </span>
 `;
 
+exports[`redux-tween should achieve target state after two sequential tweens 1`] = `
+<span>
+  100
+</span>
+`;
+
 exports[`redux-tween should behave properly when interrupted 1`] = `
 <span>
   0
