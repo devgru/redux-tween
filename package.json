@@ -1,11 +1,12 @@
 {
   "name": "redux-tween",
   "version": "0.0.1",
-  "description": "Tween between reducer states",
+  "description": "Tween store state",
   "author": "Dmitriy Semyushkin <git@devg.ru> (https://devg.ru)",
   "license": "MIT",
   "files": [
-    "dist.js"
+    "dist.js",
+    "index.d.ts"
   ],
   "main": "dist.js",
   "dependencies": {
