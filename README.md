@@ -3,6 +3,8 @@
 > Tween store state.
 > Library is in pre-release.
 
+![Counter Demo](./counter.gif)
+
 Redux Tween provides a way to tween your Redux store smoothly, interpolating states in between.
 
 To achieve it Redux Tween wraps action creators and a reducer (i.e. whole [duck](https://github.com/erikras/ducks-modular-redux)).
