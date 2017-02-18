@@ -8,6 +8,7 @@
     "dist.js",
     "index.d.ts"
   ],
+  "repository": "devgru/redux-tween",
   "main": "dist.js",
   "dependencies": {
     "d3-interpolate": "1",
