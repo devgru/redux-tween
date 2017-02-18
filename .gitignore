@@ -7,3 +7,5 @@ coverage
 
 dist.js
 test-typings/**/*.js
+
+stats.json
