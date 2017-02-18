@@ -6,7 +6,7 @@ import {tweenActionCreators} from 'redux-tween';
 
 import {easeExpOut as ease} from 'd3-ease';
 const tweenConfig = {
-  duration: 5000,
+  duration: 3000,
   ease
 };
 

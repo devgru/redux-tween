@@ -2,7 +2,7 @@ import {tweenReducer} from 'redux-tween';
 
 const MOVE = 'redux-tween-examples/circle/MOVE';
 
-export default tweenReducer((state = {}, action) => {
+export default tweenReducer((state = {x: 10, y: 200}, action) => {
   switch (action.type) {
     case MOVE:
       const {circle} = action;
@@ -12,17 +12,10 @@ export default tweenReducer((state = {}, action) => {
   }
 });
 
-function moveCircle(x, y) {
-  return {
-    type: MOVE,
-    circle: {x, y}
-  };
-}
-
 function moveCircleToLeft() {
   return {
     type: MOVE,
-    circle: {x: 0, y: 200}
+    circle: {x: 10, y: 200}
   };
 }
 
@@ -34,7 +27,6 @@ function moveCircleToRight() {
 }
 
 export const actionCreators = {
-  moveCircle,
   moveCircleToLeft,
   moveCircleToRight
 };

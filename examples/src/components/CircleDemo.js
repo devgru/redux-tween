@@ -22,7 +22,7 @@ const connectWithProps = connect(mapStateToProps, mapDispatchToProps);
 class Demo extends Component {
   componentDidMount() {
     this.direction = 'left';
-    this.interval = setInterval(() => {
+    const moveCircle = () => {
       if (this.direction === 'left') {
         this.props.moveCircleToLeft();
         this.direction = 'right';
@@ -30,7 +30,9 @@ class Demo extends Component {
         this.props.moveCircleToRight();
         this.direction = 'left';
       }
-    }, 1000);
+    };
+    moveCircle();
+    this.interval = setInterval(moveCircle, 1000);
   }
   
   componentWillUnmount() {
