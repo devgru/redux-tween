@@ -5,7 +5,7 @@
 
 ![Counter Demo](./counter.gif)
 
-Redux Tween provides a way to tween your Redux store smoothly, interpolating states in between.
+Redux Tween provides a way to tween state in Redux store smoothly, interpolating states in between.
 
 To achieve it Redux Tween wraps action creators and a reducer (i.e. whole [duck](https://github.com/erikras/ducks-modular-redux)).
 
@@ -28,6 +28,7 @@ $ npm install --save redux-tween
 ## Usage
 
 To use Redux Tween follow these steps:
+
 1. (Optional) Define transition setup and action filter.
 2. Wrap your action creators object.
 3. Wrap your reducer.
@@ -35,6 +36,7 @@ To use Redux Tween follow these steps:
 ### Defining transition setup and action filter
 
 Redux Tween has four defaults:
+
 - transition duration is 250ms;
 - transition has no delay by default;
 - [cubic](https://github.com/d3/d3-ease#easeCubic) easing is applied;
