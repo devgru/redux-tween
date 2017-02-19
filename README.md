@@ -3,7 +3,7 @@
 > Tween store state.
 > Library is in pre-release.
 
-<img src="./counter.gif" alt="Counter Demo" width="120">
+<img src="https://raw.githubusercontent.com/devgru/redux-tween/master/counter.gif" alt="Counter Demo" width="120">
 
 Redux Tween provides a way to tween state in Redux store smoothly, interpolating states in between.
 
