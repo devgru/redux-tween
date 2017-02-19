@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
 import {connect, Provider} from 'react-redux';
 import {createStore} from 'redux';
-
 import renderer from 'react-test-renderer';
-
+import {easeCubicIn} from 'd3-ease';
 import roundTo from 'round-to-precision';
 
 const roundToQuarter = roundTo(25);
 
 import {tweenActionCreators, tweenReducer} from '../lib';
-import {easeCubicIn} from 'd3-ease';
 
 const reducer = (state = 0, action) => {
   const {type, percent} = action;
