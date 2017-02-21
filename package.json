@@ -36,7 +36,7 @@
   },
   "scripts": {
     "build": "webpack -p",
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "typings": "./index.d.ts",
   "peerDependencies": {},
