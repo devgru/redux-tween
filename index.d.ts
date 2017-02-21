@@ -1,4 +1,4 @@
-import {Action, ActionCreatorsMapObject, Middleware, Reducer} from 'redux';
+import {Action, ActionCreatorsMapObject, StoreEnhancer, Reducer} from 'redux';
 
 type easingFn = (normalizedTime: number) => number;
 
@@ -23,5 +23,7 @@ export function tweenActionCreators<S>(
 ): ActionCreatorsMapObject;
 
 export function tweenReducer<S>(r: Reducer<S>): Reducer<S>;
-
-export const tweenMiddleware: Middleware;
+export function tweenStore<S>(
+  tweenConfig?: TweenConfig<S>,
+  tweenFilter?: (a: Action) => boolean
+): StoreEnhancer<S>;
