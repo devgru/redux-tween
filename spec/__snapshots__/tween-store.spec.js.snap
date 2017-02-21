@@ -1,0 +1,47 @@
+exports[`redux-tween should achieve target state after tween 1`] = `
+<span>
+  100
+</span>
+`;
+
+exports[`redux-tween should achieve target state after two sequential tweens 1`] = `
+<span>
+  100
+</span>
+`;
+
+exports[`redux-tween should behave properly when interrupted 1`] = `
+<span>
+  0
+</span>
+`;
+
+exports[`redux-tween should have nearly 25% progress in 15% of time with cubic 1`] = `
+<span>
+  25
+</span>
+`;
+
+exports[`redux-tween should have nearly 50% progress in 50% of time 1`] = `
+<span>
+  50
+</span>
+`;
+
+exports[`redux-tween should init well 1`] = `
+<span>
+  0
+</span>
+`;
+
+exports[`redux-tween should not tween, apply immediately 1`] = `
+<span>
+  100
+</span>
+`;
+
+exports[`redux-tween should try to be constant speed when required 1`] = `
+<span>
+  0
+</span>
+`;

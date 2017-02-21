@@ -1,6 +1,6 @@
 # Redux Tween API Reference
 
-Redux Tween API provides two functions, *tweenReducer* and *tweenActionCreators*.
+Redux Tween API provides three functions, *tweenReducer*, *tweenActionCreators* and *tweenStore*.
 
 ## tweenReducer(*reducer*)
 
@@ -45,4 +45,17 @@ Returns *readyToDispatch(dispatch)* function which, given a *dispatch* function,
 
 Call this function manually within *mapDispatchToProps* binder or just pass it as a second argument of react-redux's [connect()](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options).
 
-With Redux Tween you don't call [bindActionCreators](http://redux.js.org/docs/api/bindActionCreators.html) manually.
+With *tweenActionCreators* you don't call [bindActionCreators](http://redux.js.org/docs/api/bindActionCreators.html) manually.
+
+## tweenStore(*transitionSetup = {}*, *actionFilter = Boolean*)
+
+### Arguments
+
+1. **transitionSetup** is described above.
+2. **actionFilter** is described above.
+
+### Returns
+
+Returns [StoreEnhancer](http://redux.js.org/docs/Glossary.html#store-enhancer), which should be passed as last argument of redux's [createStore()](http://redux.js.org/docs/api/createStore.html#createstorereducer-preloadedstate-enhancer) or [composed](http://redux.js.org/docs/api/compose.html#composefunctions) with other enhancers such as middlewares (as in [example](./BASIC.md)).
+
+

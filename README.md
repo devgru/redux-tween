@@ -26,99 +26,15 @@ $ yarn add redux-tween
 $ npm install --save redux-tween
 ```
 
-## Usage
+## Integration and usage
 
-To use Redux Tween follow these steps:
+- [Basic](./docs/BASIC.md), store-based integration.
+- [Advanced](./docs/ADVANCED.md), per-reducer integration.
 
-1. Wrap action creators object.
-2. Wrap reducer.
-3. (Optional) Define transition setup and action filter.
-
-### Wrapping action creators
-
-Wrapping replaces [bindActionCreators](http://redux.js.org/docs/api/bindActionCreators.html) call:
-
-```js
-import * as actionCreators from '../ducks/your-duck';
-import {tweenActionCreators} from 'redux-tween';
-
-const mapDispatchToProps = tweenActionCreators(actionCreators);
-
-// or, if you need to add more dispatchables
-const tweened = tweenActionCreators(actionCreators);
-const mapDispatchToProps = dispatch => {
-  const anotherDispatchable = ...
-  return {
-    ...tweened,
-    anotherDispatchable
-  };
-}
-```
-
-Pass *mapDispatchToProps* as a second argument of react-redux's [connect()](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options).
-
-```js
-const mapStateToProps = ... // up to you
-const connectWithProps = connect(mapStateToProps, mapDispatchToProps);
-```
-
-### Wrapping reducer
-
-You should wrap reducers responsible for handling tweened actions.
-
-```js
-import {default as someReducer} from '../ducks/your-duck';
-import {tweenReducer} from 'redux-tween';
-
-const someTweenedReducer = tweenReducer(someReducer);
-```
-
-After wrapping, combine wrapped reducer as usual.
-You can wrap basic or combined reducer in any level of hierarchy. It is recommended to check whether tweening impacts your app performance.
-
-### Defining transition setup and action filter
-
-Redux Tween has these defaults:
-
-- transition duration is 250ms;
-- transition has no delay;
-- [cubic](https://github.com/d3/d3-ease#easeCubic) easing is applied;
-- every action results in transition, none of actions applies immediately.
-
-To override this defaults you setup Redux Tween by providing additional arguments to `tweenActionCreators`.
-
-```js
-
-// use one of d3 easings or write your own
-import {easePolyIn as ease} from 'd3-ease';
-
-const duration = ({action, state, nextState}) => {
-  // calculate duration
-  return action.desiredDuration;
-};
-
-const delay = ({action, state, nextState}) => {
-  // calculate delay
-  return action.desiredDelay;
-};
-
-// or just 
-const duration = 750;
-const delay = 50;
-
-const transitionSetup = {ease, duration, delay};
-const actionFilter = action => !action.immediate;
-
-// pass your setup like this:
-const mapDispatchToProps = tweenActionCreators(actionCreators, transitionSetup, actionFilter);
-
-// if you want just filter:
-const mapDispatchToProps = tweenActionCreators(actionCreators, {}, actionFilter);
-```
 
 ## API Reference
 
-Is [here](./API.md).
+Is [here](./docs/API.md).
 
 ## Running examples
 
@@ -130,8 +46,8 @@ $ yarn start
 
 ## TODO
 
-- Introduce store tweening as most simple possible integration;
 - Add benchmarks;
+- Add basic/advanced integrations comparison;
 - More tests;
 - More examples;
 - Check for corner cases;
@@ -140,6 +56,8 @@ $ yarn start
 ## Development
 
 Your input is highly appreciated.
+
+
 
 This library is experimental and I'd be happy to help you integrating Redux Tween into other software.
 
