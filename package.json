@@ -14,7 +14,7 @@
     "d3-interpolate": "1",
     "d3-selection": "1",
     "d3-transition": "1",
-    "lodash.clone": "^4.5.0",
+    "lodash.clonedeep": "4",
     "object-map": "^1.0.2"
   },
   "devDependencies": {
