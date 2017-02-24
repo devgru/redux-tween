@@ -57,15 +57,13 @@ $ yarn start
 
 Your input is highly appreciated.
 
-
-
 This library is experimental and I'd be happy to help you integrating Redux Tween into other software.
 
 To play with library, follow these steps:
 
 * Install dependencies: `yarn`;
 * Develop;
-* Run tests: `yarn test -- --watchAll`;
+* Run tests: `yarn test`;
 * Build `yarn build`;
 
 ## License
