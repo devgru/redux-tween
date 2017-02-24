@@ -1,6 +1,6 @@
 # Basic integration
 
-To use Redux Tween follow these steps:
+To use Redux Tween:
 
 1. Enhance store.
 2. (Optional) Define transition setup and action filter.
@@ -21,7 +21,7 @@ const store = createStore(reducer, enhancer);
 
 ## Defining transition setup and action filter
 
-Define transitionSetup and/or actionFilter as described [here](./SETUP.md) and use them:
+Define *transitionSetup* and/or *actionFilter* as described [here](./SETUP.md) and use them:
 
 ```js
 // pass your setup like this:
@@ -33,7 +33,7 @@ const enhancer = compose(
 // if you want just setup:
 const enhancer = compose(
   applyMiddleware(...middlewares),
-  tweenStore(transitionSetup, actionFilter)
+  tweenStore(transitionSetup)
 );
 
 // if you want just filter:

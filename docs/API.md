@@ -8,11 +8,11 @@ Wraps your reducer to apply tweened states.
 
 ### Arguments
 
-1. **reducer** is an ordinary reducer.
+1. **reducer** is an ordinary [reducer](http://redux.js.org/docs/Glossary.html#reducer).
 
 ### Returns
  
-Returns similar reducer which is enhanced to deal with both your actions and Redux Tween inner actions. This reducer would properly deal with all your actions, tweened or intermediate.
+Returns reducer enhanced to process both your actions and Redux Tween inner actions. This reducer would properly deal with all your actions, tweened or intermediate.
 
 ## tweenActionCreators(*actionCreators = {}*, *transitionSetup = {}*, *actionFilter = Boolean*)
 
@@ -22,10 +22,10 @@ All arguments are optional, but without *actionCreators* the result would be use
 
 ### Arguments
 
-1. **actionCreators** is an ordinary action creators dictionary i.e. an object which values are functions, returning Redux action.
+1. **actionCreators** is an ordinary [action creators](http://redux.js.org/docs/Glossary.html#action-creator) dictionary i.e. an object which values are functions, returning Redux action.
 
 2. **transitionSetup** is an object with three optional keys:
-  - **ease** to specify easing function (pass any one from [d3-ease](https://github.com/d3/d3-ease));
+  - **ease** to specify easing function (pass any one from [d3-ease](https://github.com/d3/d3-ease) or write your own);
   - **duration** to specify transition duration in milliseconds;
   - **delay** to specify transition delay in milliseconds.
 

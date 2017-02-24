@@ -1,6 +1,6 @@
 # Advanced integration
 
-To use Redux Tween follow these steps:
+To use Redux Tween:
 
 1. Wrap action creators object.
 2. Wrap reducer.
