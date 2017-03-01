@@ -10,11 +10,11 @@
 
 Redux Tween provides a way to change state in Redux store smoothly, interpolating states in between.
 
-To achieve it Redux Tween wraps action creators and a reducer (i.e. whole [duck](https://github.com/erikras/ducks-modular-redux)).
+To achieve this Redux Tween either enhances store or wraps some of action creators and reducers (i.e. some of your [ducks](https://github.com/erikras/ducks-modular-redux)).
 
 ## How it works
 
-Redux Tween uses wrapped reducer to calculate next state. Instead of immediately applying new state, Redux Tween launches timer which pushes new interpolated states on every frame.
+Redux Tween uses wrapped reducer to calculate next state. Instead of immediately applying new state, Redux Tween launches transition to push interpolated states on every frame.
 
 Redux Tween uses [d3-transition](https://github.com/d3/d3-transition) to start and interrupt transitions. Redux Tween allows running one transition per reducer, interrupting previous transition if necessary.
 
@@ -41,7 +41,9 @@ Is [here](./docs/API.md).
 ## Running examples
 
 ```sh
-$ cd examples
+$ cd examples/store
+$ # or
+$ cd examples/action-and-reducer
 $ yarn
 $ yarn start
 ```
@@ -53,6 +55,7 @@ $ yarn start
 - Add basic/advanced integrations comparison;
 - More tests;
 - More examples;
+- Improve examples and tests organization (300 MiB is too much);
 - Check for corner cases;
 - Rewrite in TS.
 

@@ -36,7 +36,7 @@ const connectWithProps = connect(mapStateToProps, mapDispatchToProps);
 
 ## Wrapping reducer
 
-You should wrap reducers responsible for handling tweened actions.
+Wrap reducers responsible for handling tweened actions.
 
 ```js
 import {default as someReducer} from '../ducks/your-duck';

@@ -4,7 +4,7 @@ Redux Tween API provides three functions, *tweenReducer*, *tweenActionCreators* 
 
 ## tweenReducer(*reducer*)
 
-Wraps your reducer to apply tweened states.
+Wraps reducer to apply tweened states.
 
 ### Arguments
 

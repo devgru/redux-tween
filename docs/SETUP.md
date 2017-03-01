@@ -7,7 +7,7 @@ Redux Tween has these defaults:
 - [cubic](https://github.com/d3/d3-ease#easeCubic) easing is applied;
 - every action results in transition, none of actions applies immediately.
 
-To override this defaults you setup Redux Tween by providing additional arguments to `tweenActionCreators` or `tweenStore`.
+To override this defaults setup Redux Tween by providing additional arguments to `tweenActionCreators` or `tweenStore`.
 
 ```js
 
