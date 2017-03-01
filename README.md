@@ -48,7 +48,7 @@ $ yarn start
 
 ## TODO
 
-- Wait for [d3-interpolate/34](https://github.com/d3/d3-interpolate/pull/34) PR is accepted so it is possible to tween things like Redux Router history;
+- Wait for [d3-interpolate/34](https://github.com/d3/d3-interpolate/pull/34) PR accept merge then remove bundled `d3-interpolate`;
 - Add benchmarks;
 - Add basic/advanced integrations comparison;
 - More tests;
