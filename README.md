@@ -1,8 +1,10 @@
 # Redux Tween
 
 > Tween store state.
-
-> Library is in pre-release.
+>
+> Library is in pre-release and may not meet your expectations.
+>
+> If you need a simple way to animate several parameters in React-based elements try [Jeremy Stucki's approach](https://bl.ocks.org/herrstucki/27dc76b6f8411b4725bb) using well-known [React Motion](https://github.com/chenglou/react-motion) library.
 
 <img src="https://raw.githubusercontent.com/devgru/redux-tween/master/counter.gif" alt="Counter Demo" width="120">
 
