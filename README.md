@@ -2,7 +2,7 @@
 
 > Tween store state.
 >
-> Library is in pre-release and may not meet your expectations.
+> Library is experimental and may not meet your expectations.
 >
 > If you need a simple way to animate several parameters in React-based elements try [Jeremy Stucki's approach](https://bl.ocks.org/herrstucki/27dc76b6f8411b4725bb) using well-known [React Motion](https://github.com/chenglou/react-motion) library.
 
@@ -33,7 +33,6 @@ $ npm install --save redux-tween
 - [Basic](./docs/BASIC.md), store-based integration.
 - [Advanced](./docs/ADVANCED.md), per-reducer integration.
 
-
 ## API Reference
 
 Is [here](./docs/API.md).
@@ -50,12 +49,12 @@ $ yarn start
 
 ## TODO
 
-- Wait for [d3-interpolate/34](https://github.com/d3/d3-interpolate/pull/34) PR accept merge then remove bundled `d3-interpolate`;
+- Wait for [d3-interpolate/34](https://github.com/d3/d3-interpolate/pull/34) PR merge then remove bundled `d3-interpolate`;
 - Add benchmarks;
 - Add basic/advanced integrations comparison;
 - More tests;
 - More examples;
-- Improve examples and tests organization (300 MiB is too much);
+- Improve examples and dependencies organization (300 MiB is too much);
 - Check for corner cases;
 - Rewrite in TS.
 
@@ -63,14 +62,14 @@ $ yarn start
 
 Your input is highly appreciated.
 
-This library is experimental and I'd be happy to help you integrating Redux Tween into other software.
+This library is experimental, bug reports and PRs are welcome. I'd be happy to help you integrating Redux Tween into other software.
 
-To play with library, follow these steps:
+To modify library, follow these steps:
 
 * Install dependencies: `yarn`;
 * Develop;
 * Run tests: `yarn test`;
-* Build `yarn build`;
+* Build `yarn build`.
 
 ## License
 
