@@ -1,5 +1,5 @@
 {
-  "name": "examples",
+  "name": "redux-tween-action-and-reducer-example",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
