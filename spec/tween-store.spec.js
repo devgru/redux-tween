@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect, Provider} from 'react-redux';
 import {createStore, bindActionCreators} from 'redux';
 import renderer from 'react-test-renderer';
 import {easeCubicIn} from 'd3-ease';
 import roundTo from 'round-to-precision';
-import {tweenStore} from 'redux-tween';
+import {tweenStore} from '../lib';
 
 const roundToQuarter = roundTo(25);
 

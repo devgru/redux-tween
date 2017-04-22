@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect, Provider} from 'react-redux';
 import {createStore} from 'redux';
 import renderer from 'react-test-renderer';
