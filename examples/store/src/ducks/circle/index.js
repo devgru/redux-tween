@@ -20,7 +20,7 @@ function moveCircleToLeft() {
 function moveCircleToRight() {
   return {
     type: MOVE,
-    circle: {x: 500, y : 200}
+    circle: {x: 500, y: 200}
   };
 }
 

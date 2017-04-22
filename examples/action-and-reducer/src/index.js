@@ -29,8 +29,8 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <Route path="circle" component={CirclePage} />
-        <Route path="counter" component={CounterPage} />
+        <Route path="circle" component={CirclePage}/>
+        <Route path="counter" component={CounterPage}/>
       </Route>
     </Router>
   </Provider>,
