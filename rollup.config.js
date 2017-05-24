@@ -15,6 +15,7 @@ export default {
     'd3-color': 'd3-color',
     'd3-selection': 'd3-selection',
     'd3-transition': 'd3-transition',
+    'd3-interpolate': 'd3-interpolate',
     'lodash.clonedeep': 'lodash.clonedeep',
     'object-assign': 'object-assign'
   }
