@@ -1,5 +1,4 @@
-import uglify from 'rollup-plugin-uglify';
-import { minify } from 'uglify-js-harmony';
+import uglify from 'rollup-plugin-uglify-es';
 
 export default {
   entry: 'lib/index.js',
@@ -8,7 +7,7 @@ export default {
   context: 'window',
   moduleName: 'ReduxTween',
   plugins: [
-    uglify({}, minify)
+    uglify()
   ],
   globals: {
     'object-map': 'object-map',
